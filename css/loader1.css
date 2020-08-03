@@ -1,0 +1,39 @@
+.loader {
+    height: 50px;
+    /* for animation */
+    transform-origin: bottom center; /* Damit es anders rotiert*/
+    animation: rotate 3s linear infinite;
+}
+
+.circle {
+    display: inline-block; /* Damit es im Kreis geht */
+    background-color: purple;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    /* der default wird auf basicly invisable gesetzt */
+    transform: scale(0);
+    /*der Kreis braucht auch eine Animation */
+    animation: grow 1.5s linear infinite; /* Es ist 0 und dann wird es alle 1.5sec zu seiner normalen größe */
+    margin: -10px;
+}
+
+.circle:nth-child(2) {
+    background-color: palevioletred;
+    animation-delay: 0.75s;
+}
+
+/* Die Animationen sind 2 verschiedene */
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes grow {
+    50% {
+        /*sclae verändert größe, macht aber gerade noch nichts, weil sclaed bei default zu 1 */
+        transform: scale(1);
+    }
+}
